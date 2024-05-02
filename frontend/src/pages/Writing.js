@@ -27,7 +27,9 @@ import book_blue from "../img/book_blue.jpg";
 import book_purple from "../img/book_purple.jpg";
 import chat from "../img/chat.jpg";
 import lock from "../img/lock.jpg";
+import config from "./backend_url.js";
 
+const haram_change = config.localhost;
 
 function Writing(props) {
     const [show, setShow] = useState(false);
@@ -66,13 +68,6 @@ function Writing(props) {
     const phq8 = useRef(null)
     const phq9 = useRef(null)
     let [phqTotal, setPhqTotal] = useState(null)
-
-// https://mindfuljournal-fzesr.run.goorm.site
-// http://0.0.0.0:8000
-// https://5099-210-183-91-2.ngrok-free.app ngrok 8000번 포트에 해당하는 url은 계속 바꿔줘야함
-// const haram_change = 'https://b099-124-58-14-21.ngrok-free.app'
-// const haram_change = 'http://0.0.0.0:8000'
-const haram_change = 'http://124.58.14.21:8000'
 
     // voice input feature
     useEffect(() => {
@@ -387,10 +382,6 @@ const haram_change = 'http://124.58.14.21:8000'
             console.log("No such document!");
         }
     }
-
-    // https://mindfuljournal-fzesr.run.goorm.site
-    // http://0.0.0.0:8000
-
 
     function requestPrompt(text, user, num, turn, module, model) {
         return fetch(haram_change+'/standalone', {

@@ -14,6 +14,7 @@ __pycache__/
 firebase_config.json
 credentials.json
 haram-mindfuldiary1-firebase-adminsdk-zm9xb-c4eb736168.json
+backend_url.js
 
 node_modules/
 frontend-enduser/node_modules/

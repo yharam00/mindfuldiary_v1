@@ -1,0 +1,12 @@
+fastapi==0.110.2
+firebase_admin==6.5.0
+jose==1.0.0
+kiwipiepy==0.17.1
+konlpy==0.6.0
+openai==1.23.6
+passlib==1.7.4
+prompts==0.0.1
+pydantic==2.7.1
+python-dotenv==1.0.1
+Requests==2.31.0
+sendgrid==6.11.0

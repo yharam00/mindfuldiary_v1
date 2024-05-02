@@ -1,0 +1,44 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Byte-compiled / optimized / DLL files
+
+__pycache__/
+*.pyc
+*.py[cod]
+*.pack
+*.cache
+*.eslintcache
+
+.env
+<MindfulDiary>_service_account_keys.json
+firebase_config.json
+credentials.json
+haram-mindfuldiary1-firebase-adminsdk-zm9xb-c4eb736168.json
+
+node_modules/
+frontend-enduser/node_modules/
+frontend-expert/node_modules/
+frontend-operator/node_modules/
+frontend-standalone/node_modules/
+/.pnp
+.pnp.js
+
+/coverage
+
+/build
+
+firebase-config.js
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+#db key
+/backend/app/secrets/

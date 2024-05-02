@@ -26,8 +26,10 @@ app.add_middleware(
 # 구글 Firebase인증 및 openAI api key 설정
 load_dotenv()
 gptapi = os.getenv("openai_mindfuldiary_v0")
-cred = credentials.Certificate(
-    '/Users/yoonharam/Desktop/24년연구/마음일기 재구축/public_haram/backend/app/haram-mindfuldiary1-firebase-adminsdk-zm9xb-c4eb736168.json')
+sendgridapi = os.getenv("sengridapi_taewan")
+firebaseadminsdk = os.getenv("firebaseadminsdk_location")
+
+cred = credentials.Certificate(firebaseadminsdk)
 app_1 = firebase_admin.initialize_app(cred)
 db = firestore.client()
 openai.api_key = gptapi
@@ -413,13 +415,12 @@ async def calc(request: Request):
 @app.post("/send-email")
 async def send_email(email: EmailSchema):
     message = Mail(
-        from_email='twkim24@gmail.com',  # Change to your verified sender
+        from_email='cmyanglab24@gmail.com',  # Change to your verified sender
         to_emails=email.to,
         subject=email.subject,
         plain_text_content=email.body)
     try:
-        sg = SendGridAPIClient(
-            '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')  # Replace with your SendGrid API Key
+        sg = SendGridAPIClient(sendgridapi)  # Replace with your SendGrid API Key
         response = sg.send(message)
         return {"message": "Email sent successfully"}
     except Exception as e:
